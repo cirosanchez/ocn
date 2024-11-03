@@ -1,101 +1,201 @@
-import Image from "next/image";
+"use client"
+import { useState } from 'react'
+import { Menu, X, ChevronDown, Leaf, Trophy, ClipboardList, PenTool, Users, Beaker } from 'lucide-react'
 
-export default function Home() {
+export default function Component() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+
+  const menuItems = [
+    { id: 'prizes', label: 'Premios' },
+    { id: 'how-it-works', label: 'Cómo funciona?' },
+    { id: 'schedule', label: 'Horarios' },
+  ]
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <div className="min-h-screen bg-green-50 font-sans">
+        <header className="bg-green-700 text-white">
+          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div
+                className="flex items-center space-x-2 cursor-pointer"
+                onClick={() => setActiveSection('home')}
+            >
+              <Leaf className="text-green-300" />
+              <h1 className="text-3xl font-bold">OCN24</h1>
+            </div>
+            <nav className="hidden md:flex space-x-6">
+              {menuItems.map((item) => (
+                  <button
+                      key={item.id}
+                      className="hover:text-green-200 transition-colors"
+                      onClick={() => setActiveSection(item.id)}
+                  >
+                    {item.label}
+                  </button>
+              ))}
+            </nav>
+            <button className="md:hidden" onClick={toggleMenu}>
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        {isMenuOpen && (
+            <div className="md:hidden bg-green-600 text-white">
+              <nav className="container mx-auto px-4 py-4 flex flex-col space-y-2">
+                {menuItems.map((item) => (
+                    <button
+                        key={item.id}
+                        className="hover:text-green-200 transition-colors text-left"
+                        onClick={() => {
+                          setActiveSection(item.id)
+                          setIsMenuOpen(false)
+                        }}
+                    >
+                      {item.label}
+                    </button>
+                ))}
+              </nav>
+            </div>
+        )}
+
+        <main className="container mx-auto px-4 py-8">
+          {activeSection === 'home' && (
+              <section className="text-center h-96 pb-96 mb-24">
+                <h2 className="text-4xl font-bold text-green-800 mb-4">Bienvenidos a la OCN24 🌿</h2>
+                <p className="text-xl text-green-700 mb-8">Las olimpiadas de ciencias naturales del Gimnasio de Los Cerros.</p>
+                <div className="bg-green-200 p-8 rounded-lg shadow-lg">
+                  <p className="text-green-800 text-lg">
+                    Las OCN24 no solamente es un examen para el colegio, es una forma de ayuda hacia los estudiantes, brindando un
+                      soporte académico, fomentando la competitividad sana entre los estudiantes y reprimir el plagio.
+
+                      De antemano agradecemos a los estudiantes por su participación y al colegio por brindarnos las ayudas necesarias. Buena Suerte!
+                  </p>
+                </div>
+              </section>
+          )}
+
+          {activeSection === 'prizes' && (
+              <section>
+                <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Premios</h2>
+                <div className="flex flex-col md:flex-row justify-center items-end space-y-4 md:space-y-0 md:space-x-4 mb-8">
+                  <div className="flex flex-col items-center">
+                    <div className="bg-gray-300 w-48 h-32 rounded-t-lg flex items-center justify-center">
+                      <Trophy className="text-gray-100 w-16 h-16" />
+                    </div>
+                    <div className="bg-gray-200 w-48 p-4 rounded-b-lg text-center">
+                      <h3 className="font-bold text-gray-800">Segundo Puesto</h3>
+                      <p className="text-gray-600">$X,XXX en la tienda</p>
+                      <p className="text-gray-600">1 Nota en 7</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="bg-yellow-400 w-48 h-40 rounded-t-lg flex items-center justify-center">
+                      <Trophy className="text-yellow-100 w-20 h-20" />
+                    </div>
+                    <div className="bg-yellow-300 w-48 p-4 rounded-b-lg text-center">
+                      <h3 className="font-bold text-yellow-800">Primer Puesto</h3>
+                      <p className="text-yellow-700">$X,XXX</p>
+                      <p className="text-yellow-700">2 notas en 7</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <div className="bg-orange-700 w-48 h-24 rounded-t-lg flex items-center justify-center">
+                      <Trophy className="text-orange-200 w-12 h-12" />
+                    </div>
+                    <div className="bg-orange-600 w-48 p-4 rounded-b-lg text-center">
+                      <h3 className="font-bold text-orange-100">Tercer puesto</h3>
+                      <p className="text-orange-200">$1,000</p>
+                      <p className="text-orange-200">+3 Unidades</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-green-100 p-6 rounded-lg">
+                  <h3 className="font-bold text-green-800 mb-2">Premios adicionales por clasificación</h3>
+                  <ul className="list-disc list-inside text-green-700 space-y-2">
+                    <li>Clasificación a la final: 7 en nota del 30% o 2 unidades en cualquier nota.</li>
+                    <li>Clasificación a segunda ronda: 1 unidad en un indicador de cualquier materia.</li>
+                  </ul>
+                </div>
+              </section>
+          )}
+
+          {activeSection === 'how-it-works' && (
+              <section>
+                <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Cómo funciona?</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="bg-green-600 p-4 flex items-center justify-center">
+                      <ClipboardList className="text-white w-12 h-12" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-xl mb-2 text-green-800">1. Examen</h3>
+                      <p className="text-green-700">El examen contiene 5 preguntas por materia, opción múltiple, de acuerdo a los temas vistos en clase. El examen es físico. Los estudiantes no tienen permiso de usar calculadora.</p>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="bg-green-600 p-4 flex items-center justify-center">
+                      <PenTool className="text-white w-12 h-12" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-xl mb-2 text-green-800">2. Clasificación</h3>
+                      <p className="text-green-700">Los estudiantes dentro del top 30% serán clasificados a la siguiente ronda.</p>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="bg-green-600 p-4 flex items-center justify-center">
+                      <Users className="text-white w-12 h-12" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-xl mb-2 text-green-800">3. Premios</h3>
+                      <p className="text-green-700">Los premios no son acumulables y se entregarán conforme el desarrollo de las olimpiadas con un diploma digital.</p>
+                    </div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div className="bg-green-600 p-4 flex items-center justify-center">
+                      <Beaker className="text-white w-12 h-12" />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-bold text-xl mb-2 text-green-800">4. Finales</h3>
+                      <p className="text-green-700">Los estudiantes dentro del podio recibirán premios especiales.</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+          )}
+
+          {activeSection === 'schedule' && (
+              <section>
+                <h2 className="text-3xl font-bold text-green-800 mb-4">Fechas importantes</h2>
+                <div className="space-y-4">
+                  <div className="bg-green-100 p-4 rounded-lg">
+                    <h3 className="font-semibold text-green-800">Primer Examen</h3>
+                    <p className="text-green-700">Noviembre 6 y 7, durante dirección de grupo.</p>
+                  </div>
+                  <div className="bg-green-100 p-4 rounded-lg">
+                    <h3 className="font-semibold text-green-800">Segundo Examen</h3>
+                    <p className="text-green-700">Noviembre 13 y 14, durante dirección de grupo.</p>
+                  </div>
+                  <div className="bg-green-100 p-4 rounded-lg">
+                    <h3 className="font-semibold text-green-800">Tercer Examen</h3>
+                    <p className="text-green-700">Noviembre 20 y 21, durante dirección de grupo. (Estudiantes AACBI en confirmación)</p>
+                  </div>
+                  <div className="bg-green-100 p-4 rounded-lg">
+                    <h3 className="font-semibold text-green-800">Entrega de premios y diplomas</h3>
+                    <p className="text-green-700">Noviembre 23</p>
+                  </div>
+                </div>
+              </section>
+          )}
+        </main>
+
+        <footer className="bg-green-700 text-white py-4 mt-8">
+          <div className="container mx-auto px-4 text-center">
+            <p>"La ciencia sirve para darnos una idea de cuán vasta es nuestra ignorancia." - Robert De Lamennais</p>
+          </div>
+        </footer>
+      </div>
+  )
 }

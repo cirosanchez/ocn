@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react'
-import { Menu, X, Leaf, Trophy, ClipboardList, PenTool, Users, Beaker } from 'lucide-react'
+import { Menu, X, Leaf, Trophy, ClipboardList, PenTool, Users, Beaker, Medal } from 'lucide-react'
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,6 +12,7 @@ export default function Component() {
     { id: 'prizes', label: 'Premios' },
     { id: 'how-it-works', label: 'Cómo funciona?' },
     { id: 'schedule', label: 'Horarios' },
+      { id: 'leaderboard', label: 'Tabla de Posiciones'}
   ]
 
   return (
@@ -189,6 +190,72 @@ export default function Component() {
                 </div>
               </section>
           )}
+
+            {activeSection === 'leaderboard' && (
+                <section>
+                    <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Tabla de Posiciones - Examen 0</h2>
+                    <div className="flex flex-col md:flex-row justify-center items-end space-y-4 md:space-y-0 md:space-x-4 mb-8">
+                        <div className="flex flex-col items-center">
+                            <div className="bg-gray-300 w-32 h-24 rounded-t-lg flex items-center justify-center">
+                                <Medal className="text-gray-100 w-12 h-12" />
+                            </div>
+                            <div className="bg-gray-200 w-32 p-4 rounded-b-lg text-center">
+                                <h3 className="font-bold text-gray-800">2nd</h3>
+                                <p className="text-gray-600">Emma W.</p>
+                                <p className="text-gray-700 font-semibold">Score: 98</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <div className="bg-yellow-400 w-32 h-32 rounded-t-lg flex items-center justify-center">
+                                <Medal className="text-yellow-100 w-16 h-16" />
+                            </div>
+                            <div className="bg-yellow-300 w-32 p-4 rounded-b-lg text-center">
+                                <h3 className="font-bold text-yellow-800">1st</h3>
+                                <p className="text-yellow-700">Alex M.</p>
+                                <p className="text-yellow-800 font-semibold">Score: 99</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center">
+                            <div className="bg-orange-700 w-32 h-20 rounded-t-lg flex items-center justify-center">
+                                <Medal className="text-orange-200 w-10 h-10" />
+                            </div>
+                            <div className="bg-orange-600 w-32 p-4 rounded-b-lg text-center">
+                                <h3 className="font-bold text-orange-100">3rd</h3>
+                                <p className="text-orange-200">Olivia S.</p>
+                                <p className="text-orange-100 font-semibold">Score: 97</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                        <table className="w-full">
+                            <thead className="bg-green-600 text-white">
+                            <tr>
+                                <th className="py-2 px-4 text-left">Rank</th>
+                                <th className="py-2 px-4 text-left">Name</th>
+                                <th className="py-2 px-4 text-left">Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {[
+                                { rank: 4, name: "Liam K.", score: 92 },
+                                { rank: 5, name: "Sophia R.", score: 90 },
+                                { rank: 6, name: "Noah C.", score: 89 },
+                                { rank: 7, name: "Ava P.", score: 87 },
+                                { rank: 8, name: "Ethan L.", score: 85 },
+                                { rank: 9, name: "Isabella F.", score: 84 },
+                                { rank: 10, name: "Mason T.", score: 82 },
+                            ].map((participant) => (
+                                <tr key={participant.rank} className="border-b border-gray-200 hover:bg-green-50">
+                                    <td className="py-2 px-4 text-green-800">{participant.rank}</td>
+                                    <td className="py-2 px-4 text-green-800">{participant.name}</td>
+                                    <td className="py-2 px-4 text-green-800">{participant.score}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            )}
         </main>
 
         <footer className="bg-green-700 text-white py-4 mt-8">

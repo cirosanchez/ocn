@@ -1,4 +1,4 @@
-"use client"
+"use server"
 import { useState } from 'react'
 import { Menu, X, ChevronDown, Leaf, Trophy, ClipboardList, PenTool, Users, Beaker } from 'lucide-react'
 

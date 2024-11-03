@@ -1,6 +1,6 @@
-"use server"
+"use client"
 import { useState } from 'react'
-import { Menu, X, ChevronDown, Leaf, Trophy, ClipboardList, PenTool, Users, Beaker } from 'lucide-react'
+import { Menu, X, Leaf, Trophy, ClipboardList, PenTool, Users, Beaker } from 'lucide-react'
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

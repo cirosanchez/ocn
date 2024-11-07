@@ -88,7 +88,7 @@ export default function Component() {
                     </div>
                     <div className="bg-gray-200 w-48 p-4 rounded-b-lg text-center">
                       <h3 className="font-bold text-gray-800">Segundo Puesto</h3>
-                      <p className="text-gray-600">$X,XXX en la tienda</p>
+                      <p className="text-gray-600">$X,XXX (Por definir)</p>
                       <p className="text-gray-600">1 Nota en 7</p>
                     </div>
                   </div>
@@ -98,8 +98,8 @@ export default function Component() {
                     </div>
                     <div className="bg-yellow-300 w-48 p-4 rounded-b-lg text-center">
                       <h3 className="font-bold text-yellow-800">Primer Puesto</h3>
-                      <p className="text-yellow-700">$X,XXX</p>
-                      <p className="text-yellow-700">2 notas en 7</p>
+                      <p className="text-yellow-700">$X,XXX (Por definir)</p>
+                      <p className="text-yellow-700">1 indicador en 7</p>
                     </div>
                   </div>
                   <div className="flex flex-col items-center">
@@ -108,7 +108,7 @@ export default function Component() {
                     </div>
                     <div className="bg-orange-600 w-48 p-4 rounded-b-lg text-center">
                       <h3 className="font-bold text-orange-100">Tercer puesto</h3>
-                      <p className="text-orange-200">$1,000</p>
+                      <p className="text-orange-200">$X,XXX (Por definir)</p>
                       <p className="text-orange-200">+3 Unidades</p>
                     </div>
                   </div>
@@ -173,18 +173,18 @@ export default function Component() {
                 <div className="space-y-4">
                   <div className="bg-green-100 p-4 rounded-lg">
                     <h3 className="font-semibold text-green-800">Primer Examen</h3>
-                    <p className="text-green-700">Noviembre 6 y 7, durante dirección de grupo.</p>
+                    <p className="text-green-700">Noviembre 11 y 12, durante dirección de grupo.</p>
                   </div>
                   <div className="bg-green-100 p-4 rounded-lg">
                     <h3 className="font-semibold text-green-800">Segundo Examen</h3>
-                    <p className="text-green-700">Noviembre 13 y 14, durante dirección de grupo.</p>
+                    <p className="text-green-700">Noviembre 18 y 19, durante dirección de grupo.</p>
                   </div>
                   <div className="bg-green-100 p-4 rounded-lg">
                     <h3 className="font-semibold text-green-800">Tercer Examen</h3>
                     <p className="text-green-700">Noviembre 20 y 21, durante dirección de grupo. (Estudiantes AACBI en confirmación)</p>
                   </div>
                   <div className="bg-green-100 p-4 rounded-lg">
-                    <h3 className="font-semibold text-green-800">Entrega de premios y diplomas</h3>
+                    <h3 className="font-semibold text-green-800">Entrega de premios y diplomas.</h3>
                     <p className="text-green-700">Noviembre 23</p>
                   </div>
                 </div>

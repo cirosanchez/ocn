@@ -70,7 +70,7 @@ export default function Component() {
                 <div className="bg-green-200 p-8 rounded-lg shadow-lg">
                   <p className="text-green-800 text-lg">
                     Las OCN24 no solamente es un examen para el colegio, es una forma de ayuda hacia los estudiantes, brindando un
-                      soporte académico, fomentando la competitividad sana entre los estudiantes y reprimir el plagio.
+                      soporte académico, fomentando la competitividad sana entre los estudiantes y la represión de el plagio.
 
                       De antemano agradecemos a los estudiantes por su participación y al colegio por brindarnos las ayudas necesarias. Buena Suerte!
                   </p>

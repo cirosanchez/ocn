@@ -193,7 +193,7 @@ export default function Component() {
 
             {activeSection === 'leaderboard' && (
                 <section>
-                    <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Tabla de Posiciones - Examen 0</h2>
+                    <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Tabla de Posiciones - Ronda 1 (Nov 14 y 15)</h2>
                     <div className="flex flex-col md:flex-row justify-center items-end space-y-4 md:space-y-0 md:space-x-4 mb-8">
                         <div className="flex flex-col items-center">
                             <div className="bg-gray-300 w-32 h-24 rounded-t-lg flex items-center justify-center">
@@ -201,8 +201,8 @@ export default function Component() {
                             </div>
                             <div className="bg-gray-200 w-32 p-4 rounded-b-lg text-center">
                                 <h3 className="font-bold text-gray-800">2nd</h3>
-                                <p className="text-gray-600">Emma W.</p>
-                                <p className="text-gray-700 font-semibold">Score: 98</p>
+                                <p className="text-gray-600">Tomás Esteban Rebolledo David (10A), Sergio Andrés Baena Luna (10A)</p>
+                                <p className="text-gray-700 font-semibold">Puntaje: 100</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center">
@@ -211,8 +211,8 @@ export default function Component() {
                             </div>
                             <div className="bg-yellow-300 w-32 p-4 rounded-b-lg text-center">
                                 <h3 className="font-bold text-yellow-800">1st</h3>
-                                <p className="text-yellow-700">Alex M.</p>
-                                <p className="text-yellow-800 font-semibold">Score: 99</p>
+                                <p className="text-yellow-700">Nicolás Peña Daza (10B)</p>
+                                <p className="text-yellow-800 font-semibold">Puntaje: 100</p>
                             </div>
                         </div>
                         <div className="flex flex-col items-center">
@@ -221,8 +221,8 @@ export default function Component() {
                             </div>
                             <div className="bg-orange-600 w-32 p-4 rounded-b-lg text-center">
                                 <h3 className="font-bold text-orange-100">3rd</h3>
-                                <p className="text-orange-200">Olivia S.</p>
-                                <p className="text-orange-100 font-semibold">Score: 97</p>
+                                <p className="text-orange-200">Jacobo Rojas Salazar (9B), Juan Camilo Murillo Castilla (9B)</p>
+                                <p className="text-orange-100 font-semibold">Puntaje: 100</p>
                             </div>
                         </div>
                     </div>
@@ -232,23 +232,71 @@ export default function Component() {
                             <tr>
                                 <th className="py-2 px-4 text-left">Rank</th>
                                 <th className="py-2 px-4 text-left">Name</th>
-                                <th className="py-2 px-4 text-left">Score</th>
                             </tr>
                             </thead>
                             <tbody>
                             {[
-                                { rank: 4, name: "Liam K.", score: 92 },
-                                { rank: 5, name: "Sophia R.", score: 90 },
-                                { rank: 6, name: "Noah C.", score: 89 },
-                                { rank: 7, name: "Ava P.", score: 87 },
-                                { rank: 8, name: "Ethan L.", score: 85 },
-                                { rank: 9, name: "Isabella F.", score: 84 },
-                                { rank: 10, name: "Mason T.", score: 82 },
+                                { rank: 4, name: "Rafael Vargas Bernal" },
+                                { rank: 5, name: "Matías Iriarte Buendía" },
+                                { rank: 6, name: "Juan Esteban Daza García"},
+                                { rank: 7, name: "Juan José Merchán Maya"},
+                                { rank: 8, name: "Felipe Ortiz Leal"},
+                                { rank: 9, name: "Martín Pardo González"},
+                                { rank: 10, name: "Santiago Rico Espinosa"},
+                                { rank: 11, name: "Felipe Steinbock Lozano"},
+                                { rank: 12, name: "Pablo Montejo Noguera"},
+                                { rank: 13, name: "Juan Pablo Navarro Naranjo"},
+                                { rank: 14, name: "Diego Alejandro Pérez"},
+                                { rank: 15, name: "David Camilo Roa Roa"},
+                                { rank: 16, name: "Martín Santacoloma Arciniegas"},
+                                { rank: 17, name: "Santiago Tascón Lossa"},
+                                { rank: 18, name: "Martín Guerrero Sandoval"},
+                                { rank: 19, name: "Santiago Hurtado Silva"},
+                                { rank: 20, name: "Jerónimo José Gaitán Kure"},
+                                { rank: 21, name: "Rodríguez Faciolince Emilio"},
+                                { rank: 22, name: "Juan José Barrera Vargas"},
+                                { rank: 23, name: "Luis Eduardo Castiblanco Ortiz"},
+                                { rank: 24, name: "Jerónimo Rojas Oliveros"},
+                                { rank: 25, name: "David Santiago Agudelo Barrera"},
+                                { rank: 26, name: "Matías Rojas Durán"},
+                                { rank: 27, name: "Nicolás Bohórquez Tarazona"},
+                                { rank: 28, name: "Samuel Molano Castro"},
+                                { rank: 29, name: "Khammil Vernazza Castellanos"},
+                                { rank: 30, name: "Daniel Bonilla Marulanda"},
+                                { rank: 31, name: "Juan José Cárdenas Bejarano"},
+                                { rank: 32, name: "Simón Rachid Tamayo"},
+                                { rank: 33, name: "Lorenzo Valencia González"},
+                                { rank: 34, name: "Juan José Arcos Hernández"},
+                                { rank: 35, name: "Gregorio Delgado Uribe"},
+                                { rank: 36, name: "Andrés Felipe Merchán Maya"},
+                                { rank: 37, name: "José David Arbeláez Quitián"},
+                                { rank: 38, name: "César Camilo López Sanín"},
+                                { rank: 39, name: "Juan Esteban Martínez García"},
+                                { rank: 40, name: "Santiago Andrés Pérez Hernández"},
+                                { rank: 41, name: "Carlos Daniel Torres González"},
+                                { rank: 42, name: "Juan David Vera Rivera"},
+                                { rank: 43, name: "Juan Andrés Aparicio Giraldo"},
+                                { rank: 44, name: "Camilo Andrés Chaves Matiz"},
+                                { rank: 45, name: "Javier Gómez Costa"},
+                                { rank: 46, name: "Andrés Hurtado Artunduaga"},
+                                { rank: 47, name: "Santiago Merchán Maya"},
+                                { rank: 48, name: "Daniel Quiñones Ríos"},
+                                { rank: 49, name: "Sebastían Bohórquez Ramírez"},
+                                { rank: 50, name: "Juan Andrés Castro Trujillo"},
+                                { rank: 51, name: "Miguel Cortés Villa"},
+                                { rank: 52, name: "Daniel Alejandro López Sánchez"},
+                                { rank: 53, name: "Marco José Basto Díaz"},
+                                { rank: 54, name: "Ignacio David Caldera Bracho"},
+                                { rank: 55, name: "Simón Andrés Guerrero Sandoval"},
+                                { rank: 56, name: "Miguel Andrés Rodríguez Osorio"},
+                                { rank: 57, name: "Mauricio Landazábal Millán"},
+                                { rank: 58, name: "Esteban Andrés Parrado Moreno"},
+                                { rank: 59, name: "Daniel José Parra González"},
+                                { rank: 60, name: "Tomas Ignacio Román Forero"},
                             ].map((participant) => (
                                 <tr key={participant.rank} className="border-b border-gray-200 hover:bg-green-50">
                                     <td className="py-2 px-4 text-green-800">{participant.rank}</td>
                                     <td className="py-2 px-4 text-green-800">{participant.name}</td>
-                                    <td className="py-2 px-4 text-green-800">{participant.score}</td>
                                 </tr>
                             ))}
                             </tbody>

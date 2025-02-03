@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-export default function Component() {
+export default function PointsPage() {
     const [inputValue, setInputValue] = useState('');
     const [result, setResult] = useState('');
 
@@ -68,9 +68,7 @@ export default function Component() {
         ['d56ffd29', '1'],
         ['1772bd39', '1'],
         ['c71d3744', '2ndo'],
-
     ]);
-
 
     const handleButtonClick = () => {
         const queryResult = dataMap.get(inputValue) || 'Código inválido.';

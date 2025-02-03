@@ -12,9 +12,9 @@ export default function Component() {
   const menuItems = [
     { id: 'prizes', label: 'Premios' },
     { id: 'how-it-works', label: 'Cómo funciona?' },
-    { id: 'schedule', label: 'Horarios' },
-      { id: 'leaderboard', label: 'Tabla de Posiciones'}
+    { id: 'schedule', label: 'Horarios' }, { id: 'leaderboard', label: 'Tabla de Posiciones'}, {id: 'points', label: 'Puntos'}
   ]
+
 
   return (
       <div className="min-h-screen bg-green-50 font-sans">

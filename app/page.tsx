@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react'
 import { Menu, X, Leaf, Trophy, ClipboardList, PenTool, Users, Beaker, Medal } from 'lucide-react'
+import PointsPage from "@/app/puntos";
 
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -81,7 +82,7 @@ export default function Component() {
             {activeSection === 'points' && (
                 <section>
                     <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Points Section</h2>
-                    <PointsPage />
+                    <PointsPagsae />
                 </section>
             )}
 

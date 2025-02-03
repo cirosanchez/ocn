@@ -109,7 +109,7 @@ export default function PointsPage() {
                     Buscar
                 </button>
             </div>
-            {result && <p className="mt-4">Resultado: {result}</p>}
+            {result && <p className="mt-4 text-black">Resultado: {result}</p>}
         </div>
     );
 }

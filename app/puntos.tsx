@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function PointsPage() {
     const [inputValue, setInputValue] = useState('');
@@ -70,29 +70,40 @@ export default function PointsPage() {
         ['c71d3744', '2ndo'],
     ]);
 
+    useEffect(() => {
+        const redeemedCodes = document.cookie.split('; ').find(row => row.startsWith('redeemedCodes='));
+        if (redeemedCodes) {
+            const codes = redeemedCodes.split('=')[1].split(',');
+            setRedeemedCodes(new Set(codes));
+        }
+    }, []);
+
+    const [redeemedCodes, setRedeemedCodes] = useState<Set<string>>(new Set());
+
     const handleButtonClick = () => {
+        if (redeemedCodes.has(inputValue)) {
+            setResult('El código ha sido usado.');
+            return;
+        }
+
         const queryResult = dataMap.get(inputValue) || 'Código inválido.';
         if (queryResult == '1'){
-            setResult("1 unidad en cualquier indicador de cualquier materia")
-            return
+            setResult("1 unidad en cualquier indicador de cualquier materia");
+        } else if (queryResult == '2'){
+            setResult("7 en nota del 30% o 2 unidades en cualquier nota.");
+        } else if (queryResult == '1ero'){
+            setResult("1 indicador en 7 y 7 en nota del 30% o 2 unidades en cualquier nota.");
+        } else if (queryResult == '2ndo') {
+            setResult("1 Nota en 7 y 7 en nota del 30% o 2 unidades en cualquier nota.");
+        } else if (queryResult == '3ero'){
+            setResult("+3 Unidades y 7 en nota del 30% o 2 unidades en cualquier nota.");
+        } else {
+            setResult(queryResult);
         }
-        if (queryResult == '2'){
-            setResult("7 en nota del 30% o 2 unidades en cualquier nota.")
-            return
-        }
-        if (queryResult == '1ero'){
-            setResult("1 indicador en 7 y 7 en nota del 30% o 2 unidades en cualquier nota.")
-            return
-        }
-        if (queryResult == '2ndo') {
-            setResult("1 Nota en 7 y 7 en nota del 30% o 2 unidades en cualquier nota.")
-            return
-        }
-        if (queryResult == '3ero'){
-            setResult("+3 Unidades y 7 en nota del 30% o 2 unidades en cualquier nota.")
-            return
-        }
-        setResult(queryResult);
+
+        redeemedCodes.add(inputValue);
+        setRedeemedCodes(new Set(redeemedCodes));
+        document.cookie = `redeemedCodes=${Array.from(redeemedCodes).join(',')}; path=/;`;
     };
 
     return (

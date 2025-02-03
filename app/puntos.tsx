@@ -105,7 +105,7 @@ export default function PointsPage() {
                     placeholder="Código del estudiante"
                     className="border p-2 text-black"
                 />
-                <button onClick={handleButtonClick} className="ml-2 p-2 bg-blue-500 text-white">
+                <button onClick={handleButtonClick} className="ml-2 p-2 bg-blue-500 text-black">
                     Buscar
                 </button>
             </div>

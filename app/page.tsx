@@ -78,6 +78,13 @@ export default function Component() {
               </section>
           )}
 
+            {activeSection === 'points' && (
+                <section>
+                    <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Points Section</h2>
+                    <PointsPage />
+                </section>
+            )}
+
           {activeSection === 'prizes' && (
               <section>
                 <h2 className="text-3xl font-bold text-green-800 mb-8 text-center">Premios</h2>
